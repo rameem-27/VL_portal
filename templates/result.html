@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Results</title>
+    <!-- Include Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="plot" style="width: 800px; height: 400px;"></div>
+
+    <script>
+        // Sample data (replace with your actual election result data)
+        var parties = ['Party A', 'Party B', 'Party C', 'Party D'];
+        var votes = [500, 700, 400, 600]; // Number of votes each party got
+
+        // Create bar plot using Plotly
+        var trace = {
+            x: parties,
+            y: votes,
+            type: 'bar'
+        };
+
+        var layout = {
+            title: 'Election Results',
+            xaxis: {title: 'Parties'},
+            yaxis: {title: 'Number of Votes'},
+            margin: {t: 50}, // Add top margin for title
+            bargap: 0.1 // Set gap between bars
+        };
+
+        Plotly.newPlot('plot', [trace], layout);
+    </script>
+</body>
+</html>
